@@ -31,7 +31,7 @@
             <div class="right--category__list">
               <h2>메뉴</h2>
               <ul>
-                <li>뉴 귀요미 추가</li>
+                <li class="add-new-cute">뉴 귀요미 추가</li>
                 <li>찜한 목록</li>
               </ul>
             </div>
@@ -39,6 +39,25 @@
         </nav>
       </div>
     </header>
+
+    <!-- 뉴 귀요미 추가 폼 -->
+    <div class="new-cute-form" id="new-cute-form">
+      <h2>귀요미를 추가해주세요!</h2>
+      <label for="cute-name"> 귀요미 이름: </label>
+      <input type="text" /> <br />
+      <label for="cute-tag"> 해시태그 입력: </label>
+      <input type="text" /> <br />
+      <label for="cute-category"> 귀요미 종류: </label>
+      <select>
+        <option>전체</option>
+        <option>강아지</option>
+        <option>고양이</option>
+        <option>기타</option>
+      </select>
+      <br />
+      <button type="submit" class="submit-add-cute">추가하기</button> <br />
+      <button type="button" class="close-add-cute">X</button>
+    </div>
 
     <!--네브바와 섹션-->
     <div class="wrapper">

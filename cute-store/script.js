@@ -337,3 +337,27 @@ function addEventHashTagBtn() {
     });
   });
 }
+
+//뉴 귀요미 클릭시 폼 열리기
+function toggleNewCuteForm() {
+  const newCuteForm = document.getElementById("new-cute-form");
+  newCuteForm.style.display =
+    newCuteForm.style.display === "none" || newCuteForm.style.display === ""
+      ? "block"
+      : "none";
+}
+document
+  .querySelector(".add-new-cute")
+  .addEventListener("click", toggleNewCuteForm);
+
+//폼 닫기
+function closeNewCuteForm() {
+  const closeCuteForm = document.getElementById("new-cute-form");
+  closeCuteForm.style.display = "none";
+}
+document
+  .querySelector(".submit-add-cute")
+  .addEventListener("click", closeNewCuteForm);
+document
+  .querySelector(".close-add-cute")
+  .addEventListener("click", closeNewCuteForm);

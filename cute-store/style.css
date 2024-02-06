@@ -18,6 +18,18 @@ header .header--container {
   color: #ffff;
   font-size: 30px;
 }
+
+.new-cute-form {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 15%;
+  height: 100vh;
+  margin-top: 8px;
+  background-color: #a9c4df;
+}
+
 .nav--icon {
   margin-right: 30px;
   color: #ffc585;
@@ -32,7 +44,7 @@ header .header--container {
   position: absolute;
   top: 0;
   right: 0;
-  width: 150px;
+  width: 15%;
   height: 100vh;
   margin-top: 8px;
   border-radius: 10px;
@@ -43,6 +55,7 @@ header .header--container {
 
 .right--category__list li:hover {
   color: white;
+  z-index: 1000;
 }
 
 .wrapper {
@@ -164,7 +177,7 @@ header .header--container {
 
 /* 카드섹션 */
 .card--section {
-  width: 80%;
+  width: 72%;
   margin-top: 100px;
 }
 .card--list {
@@ -181,7 +194,7 @@ header .header--container {
   margin: 30px 50px;
   border: #b8b19a 5px solid;
   border-radius: 20px;
-  background-color: rgba(249, 255, 247, 0.606);
+  background-color: rgba(249, 255, 247, 0.889);
 }
 
 @media (max-width: 700px) {
@@ -267,12 +280,11 @@ header .header--container {
   display: none;
   position: absolute;
   z-index: 1;
-  left: 0;
-  top: 0;
-  width: 300px;
+  left: 50px;
+  top: 142px;
+  width: 246px;
   height: 200px;
   overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
 }
 
 .showMore.active {
@@ -281,16 +293,17 @@ header .header--container {
 }
 
 .modal-content {
-  background-color: #fefefe;
+  background-color: #fefefe7f;
   margin: 10% auto;
   padding: 20px;
-  border: 1px solid #888;
   width: 80%;
   max-width: 600px;
 }
 
 .close {
-  color: #aaa;
+  color: #d98a82;
+  background-color: #fefefe;
+  border: none;
   float: right;
   font-size: 28px;
   font-weight: bold;
@@ -298,7 +311,7 @@ header .header--container {
 
 .close:hover,
 .close:focus {
-  color: black;
+  color: #d85243;
   text-decoration: none;
   cursor: pointer;
 }
