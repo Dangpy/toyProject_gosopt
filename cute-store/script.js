@@ -337,3 +337,89 @@ function addEventHashTagBtn() {
     });
   });
 }
+
+//뉴 귀요미 클릭시 폼 열리기
+function toggleNewCuteForm() {
+  const newCuteForm = document.getElementById("new-cute-form");
+  newCuteForm.style.display =
+    newCuteForm.style.display === "none" || newCuteForm.style.display === ""
+      ? "block"
+      : "none";
+}
+document
+  .querySelector(".add-new-cute")
+  .addEventListener("click", toggleNewCuteForm);
+
+//폼 닫기
+function closeNewCuteForm() {
+  const closeCuteForm = document.getElementById("new-cute-form");
+  closeCuteForm.style.display = "none";
+}
+
+//귀요미 추가하기 -> localstorage 바로 저장
+
+//이미지 파일 입력 변환 & 로컬스토리지 이미지 저장
+const fileInput = document.getElementById("cute-photo");
+
+fileInput.addEventListener("change", handleFileSelect);
+function handleFileSelect(event) {
+  const file = event.target.files[0];
+
+  if (file) {
+    const reader = new FileReader();
+
+    reader.onload = function (e) {
+      const imageDataURL = e.target.result;
+
+      const imgElement = document.getElementById("cute-photo");
+      imgElement.src = imageDataURL;
+
+      localStorage.setItem("cutePhoto", imageDataURL);
+    };
+
+    // 파일을 Data URL 형식으로 읽기
+    reader.readAsDataURL(file);
+  }
+}
+
+document
+  .querySelector(".submit-add-cute")
+  .addEventListener("click", function () {
+    const cuteName = document.getElementById("cute-name").value;
+    const cuteTag = document.getElementById("cute-tag").value;
+    const cuteCategory = document.getElementById("cute-category").value;
+
+    const cuteTagArray = cuteTag.split(",");
+
+    localStorage.setItem("name", cuteName);
+    localStorage.setItem("cuteTag", JSON.stringify(cuteTagArray));
+    localStorage.setItem("cuteCategory", cuteCategory);
+    // 추가하기 버튼 클릭 시 데이터 저장 및 화면에 표시
+    const tagsContainer = document.createElement("div");
+    tagsContainer.classList.add("tags-container");
+    //1. 로컬스토리지 값 가져오기
+    const storedName = localStorage.getItem("name");
+    const storedCuteTag = localStorage.getItem("cuteTag");
+    const storedCuteTagArray = JSON.parse(storedCuteTag);
+    const tagsWithHash = storedCuteTagArray.map((tag) => `#${tag}`);
+    //2. <section> 안에 있는 <div> 요소 선택
+    const storedCutePhoto = localStorage.getItem("cutePhoto");
+    const cardList = document.getElementById("modal--card");
+
+    // 새로운 카드 요소 생성
+    const newCard = document.createElement("div");
+    newCard.classList.add("newCard");
+
+    newCard.innerHTML = `
+  <h3>${storedName}</h3>
+  <img src="${storedCutePhoto}" alt="${storedName}"/>
+  <p>${tagsWithHash}</p>
+`;
+
+    //카드리스트에 추가
+    cardList.appendChild(newCard);
+  });
+
+document
+  .querySelector(".close-add-cute")
+  .addEventListener("click", closeNewCuteForm);
