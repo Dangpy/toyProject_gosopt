@@ -5,6 +5,7 @@ header {
   background-color: #a3aa7d;
   font-family: "Dongle", sans-serif;
   border-radius: 20px;
+  z-index: 100;
 }
 
 header .header--container {
@@ -28,6 +29,73 @@ header .header--container {
   height: 100vh;
   margin-top: 8px;
   background-color: #a9c4df;
+  z-index: 100;
+}
+
+.new-cute-form__wraaper {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+}
+input {
+  outline: none;
+}
+
+#cute-name {
+  margin-left: 5px;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+}
+
+#cute-tag {
+  margin-left: 5px;
+  font-size: 30px;
+  border: none;
+  border-radius: 10px;
+}
+
+#cute-category {
+  width: 150px;
+  height: 35px;
+  border-radius: 4px;
+  outline: 0 none;
+}
+
+#cute-category option {
+  background: black;
+  color: #fff;
+  padding: 3px 0;
+}
+
+option {
+  outline: none;
+}
+
+.submit-add-cute {
+  background-color: #a3aa7d;
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+
+  font-size: 20px;
+}
+
+.close-add-cute {
+  background-color: #eb8787;
+  color: whitesmoke;
+  border: none;
+  border-radius: 10px;
+  width: 50px;
+  height: 40px;
+
+  font-size: 20px;
+}
+
+.close-add-cute:hover {
+  background-color: #ed5d5d;
 }
 
 .nav--icon {
@@ -63,18 +131,21 @@ header .header--container {
 }
 
 .nav--left {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 200px;
   background-color: #fcd9a2;
-  width: 400px;
-  border-radius: 20px;
+  width: 100vw;
+
   font-family: "IBM Plex Sans KR", sans-serif;
   font-size: 17px;
-  margin-top: 110px;
+  z-index: 100;
 }
 
 .nav--left .nav--left__container {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .nav--left__container input.active {
@@ -125,6 +196,12 @@ header .header--container {
   display: flex;
   justify-content: space-evenly;
   margin-top: 10px;
+  gap: 20px;
+}
+
+.nav--tag__wrapper {
+  display: flex;
+  justify-content: space-around;
 }
 
 #text--all {
@@ -177,15 +254,15 @@ header .header--container {
 
 /* 카드섹션 */
 .card--section {
-  width: 72%;
+  width: 100%;
   margin-top: 100px;
+  overflow-x: hidden;
 }
 .card--list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-left: 80px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center;
 }
 
 .card--list .card--inner {
@@ -195,6 +272,46 @@ header .header--container {
   border: #b8b19a 5px solid;
   border-radius: 20px;
   background-color: rgba(249, 255, 247, 0.889);
+}
+
+.newCard {
+  max-width: 230px;
+  width: 100%;
+  margin: 30px 50px;
+  border: #b8b19a 5px solid;
+  border-radius: 20px;
+  background-color: rgba(249, 255, 247, 0.889);
+}
+
+.newCard h3 {
+  display: inline-block;
+  align-items: center;
+  border: #b8b19a 2px solid;
+  border-radius: 10px;
+  margin: 10px 0 0 0;
+  padding: 5px;
+  background-color: #b8b19a;
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-size: medium;
+}
+
+.newCard img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+  border: #c8d9b0 5px solid;
+  border-radius: 100px;
+}
+
+.newCard p {
+  height: 20px;
+  margin: 15px 0px;
+  color: rgb(126, 120, 120);
+  font-family: "IBM Plex Sans KR", sans-serif;
+  font-weight: 200;
+  font-size: 14px;
+  text-align: center;
 }
 
 @media (max-width: 700px) {

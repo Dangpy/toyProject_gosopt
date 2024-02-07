@@ -42,21 +42,25 @@
 
     <!-- 뉴 귀요미 추가 폼 -->
     <div class="new-cute-form" id="new-cute-form">
-      <h2>귀요미를 추가해주세요!</h2>
-      <label for="cute-name"> 귀요미 이름: </label>
-      <input type="text" /> <br />
-      <label for="cute-tag"> 해시태그 입력: </label>
-      <input type="text" /> <br />
-      <label for="cute-category"> 귀요미 종류: </label>
-      <select>
-        <option>전체</option>
-        <option>강아지</option>
-        <option>고양이</option>
-        <option>기타</option>
-      </select>
-      <br />
-      <button type="submit" class="submit-add-cute">추가하기</button> <br />
-      <button type="button" class="close-add-cute">X</button>
+      <div class="new-cute-form__wraaper">
+        <h2>귀요미를 추가해주세요!</h2>
+        <label for="cute-name"> 귀요미 이름: </label>
+        <input type="text" id="cute-name" /> <br />
+        <label for="cute-name"> 귀요미 사진: </label>
+        <input type="file" id="cute-photo" /> <br />
+        <label for="cute-tag"> 해시태그 입력: </label>
+        <input type="text" id="cute-tag" /> <br />
+        <label for="cute-category"> 귀요미 종류: </label>
+        <select id="cute-category">
+          <option class="option">강아지</option>
+          <option class="option">고양이</option>
+          <option class="option">기타</option>
+        </select>
+        <br />
+        <div class="button__wrapper"></div>
+        <button type="submit" class="submit-add-cute">추가하기</button> <br />
+        <button type="button" class="close-add-cute">X</button>
+      </div>
     </div>
 
     <!--네브바와 섹션-->
@@ -104,6 +108,8 @@
               value="기타"
             />
           </ul>
+        </div>
+        <div class="nav--tag__wrapper">
           <div class="nav--tag__container">
             <button type="button" id="text--all" class="text--all"></button>
             <button type="button" id="text--dog" class="text--dog"></button>
